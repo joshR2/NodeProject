@@ -11,6 +11,7 @@
 #include "../Model/Node.h"
 #include "../Model/Node.cpp" //Must include a reference to .h and .cpp
 
+#include "../odel/Timer.h"
 #include "../Model/ArrayNode.h"
 #include "../Model/ArrayNode.cpp"
 
@@ -24,6 +25,7 @@ class NodeController
 private:
 	Node<int> myNode;
 	ArrayNode<string> stringArrayNode;
+	Timer arrayTimer;
 public:
 	NodeController();
 	virtual ~NodeController();

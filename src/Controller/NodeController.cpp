@@ -20,6 +20,10 @@ NodeController::~NodeController()
 
 void NodeController :: start()
 {
+	arrayTimer.startTimer();
 	cout << myNode.getValue() << endl;
 	cout << stringArrayNode.getValue() << endl;
 }
+
+arrayTimer.stopTimer();
+arrayTimer.dispalyTimerInformation();

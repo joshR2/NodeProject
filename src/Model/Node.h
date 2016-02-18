@@ -14,14 +14,14 @@ template <class Type>
 class Node
 {
 private:
-	Type value;
-	Node * pointers;
+	Type value;			//Container for the value stored in the node.
+	Node * pointers;	//Pointer
 public:
 	Node();
 	Node(Type value);
 	virtual ~Node();
 	Type getValue();
-	void setValue(Type value);
+	void setValue(Type& value);
 	Node * getPointers();
 };
 

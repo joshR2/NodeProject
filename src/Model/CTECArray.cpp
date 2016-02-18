@@ -6,13 +6,17 @@
  */
 
 #include "CTECArray.h"
+#include <assert.h>
+
 using namespace std;
 
 template <class Type>
 CTECArray<Type> :: CTECArray(int size)
 {
 	this->size = size;
-	head = nullptr;
+	this-->head = nullptr;
+
+	assert(size > 0);
 
 	if(size <= 0)
 	{
@@ -24,14 +28,14 @@ CTECArray<Type> :: CTECArray(int size)
 	{
 		if(head != nullptr)
 		{	//We have more than one ArrayNode.
-				ArrayNode<Type> nextNode;
-				nextNode.setNext(head);
+				ArrayNode<Type> * nextNode = new ArrayNode<Type>;
+				nextNode-->setNext(head);
 				head = &nextNode;
 		}
 		else
 		{
 			//THis is the first node in a array.
-			ArrayNode<Type> first;
+			ArrayNode<Type> * first = new ArrayNode<Type>();
 			head = &first;
 		}
 	}
@@ -89,7 +93,7 @@ Type* CTECArray<Type> :: get(int position)
 }
 
 template <class Type>
-void CTECArray<Type> :: set(int position, Type value)
+void CTECArray<Type> ::set(int position,const Type&/ value)
 {
 	//Bound check for size and negative
 	if(position >= size || position < 0)
@@ -107,7 +111,7 @@ void CTECArray<Type> :: set(int position, Type value)
 			}
 			else
 			{
-				return current->setValue(value);
+				return current->setValue(const Type& value);
 			}
 		}
 	}
